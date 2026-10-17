@@ -812,6 +812,132 @@
   .shopItem .own{font-size:9px;opacity:.55;margin-top:4px;text-align:right}
 
   /* 成就 */
+  /* 排行榜 */
+  .mainBtn.rank{--c:#ffd76e}
+  .rkTabs{display:flex;gap:5px;margin-bottom:10px;flex-wrap:wrap}
+  .rkTab{
+    font-size:11px;font-weight:800;padding:6px 12px;border-radius:999px;cursor:pointer;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#e8eaf6;
+    font-family:inherit;letter-spacing:.5px
+  }
+  .rkTab.on{background:linear-gradient(135deg,#ffd76e,#ff9d5c);color:#3a2405;border-color:transparent}
+  .rkMe{
+    background:rgba(255,215,110,.1);border:1px solid rgba(255,215,110,.28);
+    border-radius:12px;padding:9px 11px;margin-bottom:10px;font-size:11.5px;line-height:1.7
+  }
+  .rkMe b{color:#ffd76e}
+  .rkMe .no{opacity:.55}
+  .rkList{display:flex;flex-direction:column;gap:6px}
+  .rkRow{
+    display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:11px;
+    background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07)
+  }
+  .rkRow.me{
+    background:rgba(255,215,110,.12);border-color:rgba(255,215,110,.35)
+  }
+  .rkNo{
+    width:24px;height:24px;flex:none;border-radius:50%;display:flex;align-items:center;
+    justify-content:center;font-size:11px;font-weight:900;
+    background:rgba(255,255,255,.08);color:#c9cee8
+  }
+  .rkNo.t1{background:linear-gradient(135deg,#ffe28a,#ffb35c);color:#3a2405}
+  .rkNo.t2{background:linear-gradient(135deg,#e8eef8,#b8c4d8);color:#2a2f42}
+  .rkNo.t3{background:linear-gradient(135deg,#f0b98a,#c98a5c);color:#3a2405}
+  .rkInfo{flex:1;min-width:0}
+  .rkName{font-size:12.5px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .rkName .end{font-size:9px;color:#ffd76e;margin-left:4px}
+  .rkSub{font-size:10px;opacity:.55;margin-top:2px}
+  .rkVal{font-size:13px;font-weight:900;color:#ffd76e;text-align:right;flex:none;max-width:38%}
+  .rkVal small{display:block;font-size:9px;font-weight:600;opacity:.5;color:#c9cee8;margin-top:1px}
+  .rkEmpty{font-size:12px;opacity:.5;text-align:center;padding:22px 0;line-height:1.8}
+  .rkLoad{font-size:12px;opacity:.6;text-align:center;padding:22px 0}
+
+  /* ===== 连续签到 ===== */
+  .signTop{text-align:center;padding:6px 0 14px}
+  .signBig{font-size:16px;font-weight:900}
+  .signBig b{color:#ffd76e;font-size:22px}
+  .signTip{font-size:10.5px;opacity:.55;margin-top:5px}
+  .signGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+  .signCell{
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+    border-radius:12px;padding:9px 4px;text-align:center;position:relative;overflow:hidden
+  }
+  .signCell.now{
+    border-color:rgba(255,215,110,.55);background:rgba(255,215,110,.11);
+    box-shadow:0 0 0 1px rgba(255,215,110,.2), 0 4px 14px rgba(255,215,110,.16)
+  }
+  .signCell.today{border-color:rgba(78,222,128,.45);background:rgba(78,222,128,.09)}
+  .signCell.past{opacity:.42}
+  .scDay{font-size:9px;font-weight:800;opacity:.6;letter-spacing:.5px}
+  .scIco{margin:5px 0 3px;line-height:1}
+  .scName{font-size:9px;line-height:1.4;opacity:.8;min-height:26px;display:flex;align-items:center;justify-content:center}
+  .scDone,.scNow{
+    position:absolute;top:0;right:0;font-size:7.5px;font-weight:800;
+    padding:2px 5px;border-bottom-left-radius:7px;letter-spacing:.3px
+  }
+  .scDone{background:rgba(78,222,128,.85);color:#0a2a14}
+  .scNow{background:linear-gradient(135deg,#ffd76e,#ffb35c);color:#3a2405}
+  .signNote{
+    font-size:10px;opacity:.55;text-align:center;margin:11px 0 10px;line-height:1.7
+  }
+  .signNote b{color:#ffd76e;opacity:.9}
+  .signBtn{
+    width:100%;padding:12px;border:none;border-radius:13px;cursor:pointer;
+    font-size:14px;font-weight:900;letter-spacing:1px;
+    background:linear-gradient(135deg,#ffd98a,#ffb35c,#ff9d5c);color:#3a2405;
+    box-shadow:0 3px 0 #c9832f;transition:transform .1s,box-shadow .1s
+  }
+  .signBtn:active{transform:translateY(3px);box-shadow:0 0 0 #c9832f}
+  .signBtn:disabled{
+    background:rgba(255,255,255,.08);color:rgba(255,255,255,.4);
+    box-shadow:none;cursor:default;transform:none
+  }
+
+  /* ===== 幸运转盘 ===== */
+  .whWrap{
+    position:relative;width:230px;height:230px;margin:6px auto 14px;
+    display:flex;align-items:center;justify-content:center
+  }
+  .whDisc{
+    width:200px;height:200px;border-radius:50%;position:relative;
+    border:4px solid rgba(255,215,110,.55);
+    box-shadow:0 0 0 5px rgba(0,0,0,.32), 0 8px 26px rgba(0,0,0,.42);
+    transform:rotate(0deg)
+  }
+  .whSeg{
+    position:absolute;left:50%;top:50%;margin:-13px 0 0 -13px;
+    width:26px;height:26px;display:flex;align-items:center;justify-content:center;
+    font-size:17px;line-height:1;transform-origin:0 0
+  }
+  .whPin{
+    position:absolute;top:2px;left:50%;margin-left:-11px;z-index:3;
+    width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;
+    border-top:22px solid #ffd76e;
+    filter:drop-shadow(0 2px 3px rgba(0,0,0,.5))
+  }
+  .whInfo{
+    text-align:center;font-size:11px;opacity:.7;margin-bottom:10px;line-height:1.8
+  }
+  .whInfo b{color:#ffd76e}
+  .whBtn{
+    width:100%;padding:12px;border:none;border-radius:13px;cursor:pointer;
+    font-size:14px;font-weight:900;letter-spacing:1px;
+    background:linear-gradient(135deg,#ff9bd5,#c58aff);color:#2b1240;
+    box-shadow:0 3px 0 #7a3f9e;transition:transform .1s,box-shadow .1s
+  }
+  .whBtn:active{transform:translateY(3px);box-shadow:0 0 0 #7a3f9e}
+  .whBtn:disabled{opacity:.5;cursor:default;transform:none}
+  .whList{margin-top:13px;display:grid;grid-template-columns:1fr 1fr;gap:5px}
+  .whItem{
+    display:flex;align-items:center;gap:6px;font-size:10px;
+    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+    border-radius:9px;padding:6px 8px
+  }
+  .whItem.rare{border-color:rgba(255,155,213,.3);background:rgba(255,155,213,.07)}
+  .wiIco{font-size:13px;flex:none}
+  .wiName{flex:1;opacity:.82;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .wiW{font-size:9px;font-weight:800;opacity:.55;flex:none}
+
   /* 更新日志 */
   .logVer{
     background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);
@@ -1480,6 +1606,7 @@
   </div>
   <div class="mainRow">
     <button class="mainBtn on gal" id="galBtn"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:-2.7px;flex:none;display:inline-block"><path d="M3 21h18" fill="none" stroke="#c58aff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 21V10l7-5 7 5v11" fill="none" stroke="#c58aff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21v-6h6v6" fill="none" stroke="#c58aff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 陈列室<span class="sub" id="galSub">收藏展示</span></button>
+    <button class="mainBtn on rank" id="rankBtn"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:-2.7px;flex:none;display:inline-block"><path d="M8 21h8" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 4h12v5a6 6 0 0 1-12 0z" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6H3v2a4 4 0 0 0 4 4" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 6h3v2a4 4 0 0 1-4 4" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 9v5" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 14h5l-.5 4h-4z" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 排行榜<span class="sub" id="rankSub">玩家排名</span></button><svg class="ico" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:-2.7px;flex:none;display:inline-block"><path d="M3 21h18" fill="none" stroke="#c58aff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 21V10l7-5 7 5v11" fill="none" stroke="#c58aff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21v-6h6v6" fill="none" stroke="#c58aff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 陈列室<span class="sub" id="galSub">收藏展示</span></button>
   <div class="mainRow">
     <button class="mainBtn on mount" id="mountBtn"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:-2.7px;flex:none;display:inline-block"><path d="M4 20v-6c0-4 3-7 8-7s8 3 8 7v6" fill="none" stroke="#9dffcf" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 7V4" fill="none" stroke="#9dffcf" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 14h16" fill="none" stroke="#9dffcf" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> 坐骑<span class="sub" id="mountSub">未拥有</span></button>
     <button class="mainBtn on hon" id="ptBtn"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:-2.7px;flex:none;display:inline-block"><path d="M8 21h8" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 14v4" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 4h10v5a5 5 0 0 1-10 0z" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 成就商店<span class="sub" id="ptSub">0 点</span></button>
@@ -1684,6 +1811,31 @@
     <div class="modalHead"><b><svg class="ico" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:-2.7px;flex:none;display:inline-block"><path d="M9 3h6" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 3v5l-5 11a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-11V3" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 16h10" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 合成工坊</b><button class="close" data-close><svg class="ico" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:-2.7px;flex:none;display:inline-block"><path d="M6 6 L18 18 M18 6 L6 18" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
     <div class="modalBody" id="craftBody"></div>
     <div class="petNote">3 个低阶物品可合成 1 个高阶 · 同部位 3 件装备可升阶</div>
+  </div>
+</div>
+
+<!-- ===== 排行榜 ===== -->
+<div class="modal" id="rankModal">
+  <div class="modalBox">
+    <div class="modalHead">
+      <b><svg class="ico" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:-2.7px;flex:none;display:inline-block"><path d="M8 21h8" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 4h12v5a6 6 0 0 1-12 0z" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6H3v2a4 4 0 0 0 4 4" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 6h3v2a4 4 0 0 1-4 4" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 9v5" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 14h5l-.5 4h-4z" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 玩家排行榜 <span style="font-size:11px;opacity:.6">共 <span id="rkTotal">0</span> 位玩家</span></b>
+      <button class="close" data-close>✕</button>
+    </div>
+    <div class="modalBody">
+      <div class="rkTabs" id="rkTabs">
+        <button class="rkTab on" data-by="level">等级</button>
+        <button class="rkTab" data-by="power">战力</button>
+        <button class="rkTab" data-by="gold">金币</button>
+        <button class="rkTab" data-by="rebirth">轮回</button>
+        <button class="rkTab" data-by="tower">爬塔</button>
+      </div>
+      <div class="rkMe" id="rkMe"></div>
+      <div class="rkList" id="rkList"></div>
+      <div class="petNote" id="rkHint"></div>
+    </div>
+    <div style="padding:0 16px 16px">
+      <button class="ntBtn" id="rkSync">同步我的成绩</button>
+    </div>
   </div>
 </div>
 
@@ -3777,6 +3929,7 @@ function tryUpgrade(quiet){
     if(bagSlots() > bsBefore) batchUp.bagUp = true;
     S.st.lvMax = Math.max(S.st.lvMax || 1, S.level);
     addDaily('up', 1);
+    try{ if(typeof syncScore === 'function') syncScore(true); }catch(e){}
     return true;
   }
   sfx('up');
@@ -3787,6 +3940,7 @@ function tryUpgrade(quiet){
   $('avatar').classList.add('levelup');
   log(`升级！达到 Lv.${S.level}（${t[1]}），扣除 ${fmt(need)} EXP，获得 ${10*S.level} 金币`, 'up');
   toast(`🎉 升到 Lv.${S.level}，称号：${t[1]}`);
+  try{ if(typeof syncScore === 'function') syncScore(true); }catch(e){}
   if(S.level % SCENE_STEP === 0){
     const idx = S.level / SCENE_STEP;
     const sc = SCENES[idx];
@@ -4551,6 +4705,11 @@ $('eqBtn').onclick = () => {
 $('attrBtn').onclick = () => { renderAttr(); openModal('attrModal'); };
 $('achBtn').onclick = () => { renderAch(); openModal('achModal'); };
 $('dailyBtn').onclick = () => { renderDaily(); openModal('dailyModal'); };
+$('affixBtn').onclick = () => {
+  if(S.level < 25){ toast('Lv.25 解锁洗练'); return; }
+  renderEquip(); openModal('eqModal');
+  toast('点击已装备的部位即可洗练词条', 2200);
+};
 $('statsBtn').onclick = () => { renderStats(); openModal('statsModal'); };
 $('petBtn').onclick = () => { renderPet(); openModal('petModal'); };
 $('homeBtn').onclick = () => { renderHome(); openModal('homeModal'); };
@@ -4565,6 +4724,14 @@ $('mountBtn').onclick = () => { renderMount(); openModal('mountModal'); };
 $('durBtn').onclick = () => { renderDur(); openModal('durModal'); };
 $('gloBtn').onclick = () => { renderGlo(); openModal('gloModal'); };
 $('galBtn').onclick = () => { renderGal(); openModal('galModal'); };
+$('rankBtn').onclick = openRank;
+$('rkSync').onclick = () => syncScore(false);
+$('rkTabs').onclick = e => {
+  const t = e.target.closest('.rkTab'); if(!t) return;
+  rankBy = t.getAttribute('data-by');
+  [...$('rkTabs').children].forEach(b => b.classList.toggle('on', b === t));
+  loadRank();
+};
 $('gloSearch').oninput = e => { gloKey = e.target.value; renderGlo(); };
 $('bagSearch').oninput = e => { bagKey = e.target.value; renderBag(); };
 $('towerBtn').onclick = () => { renderTower(); openModal('towerModal'); };
@@ -4592,7 +4759,7 @@ $('bossBtn').onclick = () => { renderBoss(); openModal('bossModal'); };
 $('reset').onclick = () => {
   askConfirm('确定要重置当前存档、从头开始吗？该进度无法恢复。', () => {
     Object.assign(S, {level:1, exp:0, totalExp:0, gold:0, autoLv:0, clickLv:0, scene:0,
-      bag:DEF_BAG(), equipped:{}, perm:DEF_PERM(), buy:{}, bagExtra:0, luckLv:0, dblUntil:0, wards:0, gearLv:0, hourLv:0, lampLv:0, mounts:[], mount:'', mountLv:{}, ptBuy:{}, ptSkin:'', st:DEF_ST(), achs:[], rb:0, soul:0, up:{}, won:false, ms:{}, daily:{day:-1,group:-1,stat:{},claim:{}}, pets:[], petActive:null, petPity:0, petRestUntil:0, home:{}, rune:{}, expd:[], chapter:0, codex:{it:[],pet:[],boss:[]}, tower:{floor:0,max:0}, affix:{}, affixLock:{}, affixRoll:{}, last:Date.now()});
+      bag:DEF_BAG(), equipped:{}, perm:DEF_PERM(), buy:{}, bagExtra:0, luckLv:0, dblUntil:0, wards:0, gearLv:0, hourLv:0, lampLv:0, mounts:[], mount:'', mountLv:{}, ptBuy:{}, ptSkin:'', st:DEF_ST(), achs:[], rb:0, soul:0, up:{}, won:false, ms:{}, daily:{day:-1,group:-1,stat:{},claim:{}}, sign:{day:-1,streak:0,last:-1}, pets:[], petActive:null, petPity:0, petRestUntil:0, home:{}, rune:{}, expd:[], chapter:0, codex:{it:[],pet:[],boss:[]}, tower:{floor:0,max:0}, affix:{}, affixLock:{}, affixRoll:{}, last:Date.now()});
     $('log').innerHTML = ''; setAvatar($('avatar'), '🧙');
     log('新的冒险开始了！当前场景：新手村庄');
     renderAll(); save();
@@ -4682,6 +4849,7 @@ function load(){
   if(!S.st.opened || typeof S.st.opened !== 'object') S.st.opened = {};
   S.st.modals = Object.keys(S.st.opened).length;
   if(typeof S.bagExtra !== 'number') S.bagExtra = 0;
+  if(!S.sign || typeof S.sign !== 'object') S.sign = {day:-1, streak:0, last:-1};
   if(typeof S.luckLv !== 'number') S.luckLv = 0;
   if(typeof S.dblUntil !== 'number') S.dblUntil = 0;
   if(typeof S.wards !== 'number') S.wards = 0;
@@ -5192,7 +5360,7 @@ $('dbgDrop').onclick = () => { doDrop(true); };
 $('dbgDrop5').onclick = () => { for(let i = 0; i < 5; i++) doDrop(true); };
 $('dbgClear').onclick = () => {
   Object.assign(S, {level:1, exp:0, totalExp:0, gold:0, autoLv:0, clickLv:0, scene:0,
-    bag:DEF_BAG(), equipped:{}, perm:DEF_PERM(), buy:{}, bagExtra:0, luckLv:0, dblUntil:0, wards:0, gearLv:0, hourLv:0, lampLv:0, mounts:[], mount:'', mountLv:{}, ptBuy:{}, ptSkin:'', st:DEF_ST(), achs:[], rb:0, soul:0, up:{}, won:false, ms:{}, daily:{day:-1,group:-1,stat:{},claim:{}}, pets:[], petActive:null, petPity:0, petRestUntil:0, home:{}, rune:{}, expd:[], chapter:0, codex:{it:[],pet:[],boss:[]}, tower:{floor:0,max:0}, affix:{}, affixLock:{}, affixRoll:{}, last:Date.now()});
+    bag:DEF_BAG(), equipped:{}, perm:DEF_PERM(), buy:{}, bagExtra:0, luckLv:0, dblUntil:0, wards:0, gearLv:0, hourLv:0, lampLv:0, mounts:[], mount:'', mountLv:{}, ptBuy:{}, ptSkin:'', st:DEF_ST(), achs:[], rb:0, soul:0, up:{}, won:false, ms:{}, daily:{day:-1,group:-1,stat:{},claim:{}}, sign:{day:-1,streak:0,last:-1}, pets:[], petActive:null, petPity:0, petRestUntil:0, home:{}, rune:{}, expd:[], chapter:0, codex:{it:[],pet:[],boss:[]}, tower:{floor:0,max:0}, affix:{}, affixLock:{}, affixRoll:{}, last:Date.now()});
   $('log').innerHTML = ''; setAvatar($('avatar'), '🧙');
   log('[DEBUG] 当前存档已清空'); toast('[DEBUG] 当前存档已清空'); renderAll(); save();
 };
@@ -5315,6 +5483,13 @@ function showStart(){
   hideTip();
   const gv = $('gameVer'); if(gv) gv.textContent = '当前版本 ' + GAME_VER;
   try{ renderLogBtn(); }catch(e){}
+  // 排行榜：进游戏自动同步一次，之后每 60 秒
+  try{
+    if(typeof rankEnabled === 'function' && rankEnabled()){
+      setTimeout(()=>{ syncScore(true); renderRankSub(); }, 2500);
+      setInterval(()=>{ syncScore(true); }, 60000);
+    }
+  }catch(e){}
   // 启动页数字动态化，避免写死导致与实际内容不符
   const hs = $('hintScene'), ha = $('hintAch'), hshop = $('hintShop');
   if(hs) hs.textContent = SCENES.length;
@@ -5453,6 +5628,7 @@ function doRebirth(){
       setAvatar($('avatar'), titleOf(S.level)[2]);
       sfx('rebirth');
       log(`🔄 第 ${S.rb} 次重生！获得 ${gain} 魂晶${keepGold ? `，保留 ${keepGold} 金币` : ''}`, 'up');
+      try{ if(typeof syncScore === 'function') syncScore(true); }catch(e){}
       toast(`🔄 重生成功！+${gain} 魂晶`);
       renderAll(); save();
       showTree();                       // 重生后跳转到升级树页面
@@ -5873,6 +6049,200 @@ function dayTasks(){
     goal: t.goals[g], soul: 10 + g * 6, gold: Math.round(4000 * Math.pow(1.9, g))
   }));
 }
+/* ======================= 连续签到（7 天一轮） ======================= */
+const SIGN_DAYS = 7;
+const SIGN_REWARDS = [
+  {gold:5000,                       name:'金币 ×5,000',   emj:'🪙'},
+  {soul:5,                          name:'魂晶 ×5',        emj:'💠'},
+  {item:'dld', n:3,                 name:'地灵丹 ×3',      emj:'🔴'},
+  {gold:30000,                      name:'金币 ×30,000',   emj:'🪙'},
+  {soul:15,                         name:'魂晶 ×15',       emj:'💠'},
+  {item:'tld', n:2, soul:10,        name:'天灵丹 ×2 + 魂晶 ×10', emj:'🟣'},
+  {soul:50, gold:500000, petEgg:1,  name:'魂晶 ×50 + 金币 ×50万 + 宠物蛋', emj:'👑'}
+];
+function signReset(){
+  const d = absDay();
+  if(!S.sign || typeof S.sign !== 'object') S.sign = {day:-1, streak:0, last:-1};
+  if(S.sign.day !== d){
+    // 昨天签过 → 连续；否则断签
+    const cont = (S.sign.last === d - 1);
+    S.sign.day = d;
+    if(!cont && S.sign.streak > 0 && S.sign.last !== d) S.sign.streak = 0;
+  }
+}
+function signIdx(){                       // 今天应领第几天（0 起）
+  signReset();
+  return (S.sign.streak || 0) % SIGN_DAYS;
+}
+const signDone = () => (S.sign && S.sign.last === absDay());
+function signClaim(){
+  signReset();
+  const d = absDay();
+  if(signDone()){ toast('今天已经签到过了'); return; }
+  const i = signIdx();
+  const r = SIGN_REWARDS[i];
+  S.sign.streak = (S.sign.streak || 0) + 1;
+  S.sign.last = d;
+  const parts = [];
+  if(r.gold){ addGold(r.gold); parts.push(`+${fmt(r.gold)} 金币`); }
+  if(r.soul){ S.soul += r.soul; parts.push(`+${r.soul} 魂晶`); }
+  if(r.item){ addItem(r.item, r.n || 1); parts.push(`${ITEMS[r.item].name} ×${r.n || 1}`); }
+  if(r.petEgg){
+    const id = rollPet(null);
+    const pd = petDef(id);
+    const cur = S.pets.find(x => x.id === id);
+    if(cur) cur.lv += 1; else S.pets.push({uid:'p' + Date.now() + '_' + Math.floor(Math.random() * 900), id, lv:1});
+    markCodex('pet', id);
+    parts.push(`宠物 ${pd.name}`);
+    sfx(pd.r >= 5 ? 'mythic' : (pd.r >= 4 ? 'legendary' : 'drop'));
+  }
+  log(`🎁 签到第 ${S.sign.streak} 天（第 ${i + 1}/${SIGN_DAYS} 档）：${parts.join('、')}`, 'up');
+  sfx('ach');
+  toast(`🎁 签到成功！${parts.join('、')}`, 2800);
+  checkAch(); renderAll(); save();
+  renderDaily();
+}
+
+/* ======================= 幸运转盘 ======================= */
+const WHEEL_COST = 50000;
+const WHEEL = [
+  {name:'魂晶 ×3',      emj:'💠', w:20, c:'#4a5fb8', soul:3},
+  {name:'金币 ×5万',    emj:'🪙', w:20, c:'#3a6b52', gold:50000},
+  {name:'地灵丹 ×2',    emj:'🔴', w:14, c:'#7a4a3a', item:'dld', n:2},
+  {name:'天灵丹 ×1',    emj:'🟣', w:12, c:'#5a3a7a', item:'tld', n:1},
+  {name:'魂晶 ×10',     emj:'💠', w:10, c:'#2f5f9e', soul:10, rare:1},
+  {name:'稀有装备',     emj:'⚔️', w:9,  c:'#8a6a2a', eq:1, rare:1},
+  {name:'金币 ×20万',   emj:'🪙', w:8,  c:'#2a7a5a', gold:200000, rare:1},
+  {name:'随机宠物',     emj:'🐾', w:7,  c:'#9a3a6a', pet:1, rare:1}
+];
+let wheelSpinning = false;
+function wheelRoll(){
+  const tot = WHEEL.reduce((a, b) => a + b.w, 0);
+  let r = Math.random() * tot;
+  for(let i = 0; i < WHEEL.length; i++){
+    r -= WHEEL[i].w;
+    if(r <= 0) return i;
+  }
+  return WHEEL.length - 1;
+}
+function wheelSpin(){
+  if(wheelSpinning) return;
+  if((S.gold || 0) < WHEEL_COST){ toast(`金币不足，还差 ${fmt(WHEEL_COST - S.gold)}`); return; }
+  S.gold -= WHEEL_COST;
+  S.st.spend = (S.st.spend || 0) + WHEEL_COST;
+  addDaily('buy', 1);
+  const idx = wheelRoll();
+  wheelSpinning = true;
+  // 旋转动画：多圈 + 停在目标扇区中心
+  const seg = 360 / WHEEL.length;
+  const target = 360 * 5 + (360 - (idx * seg + seg / 2));
+  const el = $('wheelDisc');
+  if(el){
+    el.style.transition = 'transform 3.4s cubic-bezier(.16,.84,.28,1)';
+    el.style.transform = `rotate(${target}deg)`;
+  }
+  const btn = $('wheelBtn');
+  if(btn){ btn.disabled = true; btn.textContent = '旋转中…'; }
+  setTimeout(() => {
+    wheelSpinning = false;
+    if(el) el.style.transition = 'none';
+    const r = WHEEL[idx];
+    const parts = [];
+    if(r.gold){ addGold(r.gold); parts.push(`+${fmt(r.gold)} 金币`); }
+    if(r.soul){ S.soul += r.soul; parts.push(`+${r.soul} 魂晶`); }
+    if(r.item){ addItem(r.item, r.n || 1); parts.push(`${ITEMS[r.item].name} ×${r.n || 1}`); }
+    if(r.eq){
+      const pool = Object.keys(ITEMS).filter(k => (ITEMS[k].kind === 'eq'));
+      const id = pool[Math.floor(Math.random() * pool.length)];
+      addItem(id, 1); markCodex('it', id);
+      parts.push(`装备 ${ITEMS[id].name}`);
+    }
+    if(r.pet){
+      const id = rollPet(null);
+      const pd = petDef(id);
+      const cur = S.pets.find(x => x.id === id);
+      if(cur) cur.lv += 1; else S.pets.push({uid:'p' + Date.now() + '_' + Math.floor(Math.random() * 900), id, lv:1});
+      markCodex('pet', id);
+      parts.push(`宠物 ${pd.name}`);
+    }
+    log(`🎡 幸运转盘：${r.name}（${parts.join('、')}）`, 'up');
+    sfx(r.rare ? 'legendary' : 'gold');
+    toast(`🎡 ${r.name}！${parts.join('、')}`, 2800);
+    S.st.wheel = (S.st.wheel || 0) + 1;
+    checkAch(); renderAll(); save();
+    renderDaily();
+  }, 3450);
+}
+/* 签到页 */
+function renderSign(body){
+  signReset();
+  const streak = S.sign.streak || 0;
+  const done = signDone();
+  const idx = signIdx();
+  let html = `<div class="signTop">
+    <div class="signBig">连续签到 <b>${streak}</b> 天</div>
+    <div class="signTip">${done ? '今天已签到，明天再来可继续累积' : (streak > 0 ? '断签会重新从第 1 天开始' : '首次签到即可领取')}</div>
+  </div>
+  <div class="signGrid">`;
+  SIGN_REWARDS.forEach((r, i) => {
+    const state = done && i === idx ? 'today' : (i < idx && done ? 'past' : (i === idx && !done ? 'now' : ''));
+    const step = Math.floor(streak / SIGN_DAYS) * SIGN_DAYS + i + 1;
+    html += `<div class="signCell ${state}">
+      <div class="scDay">第 ${i + 1} 天</div>
+      <div class="scIco">${r.emj}</div>
+      <div class="scName">${r.name}</div>
+      ${state === 'today' ? '<div class="scDone">已领取</div>' : ''}
+      ${state === 'now' ? '<div class="scNow">今日</div>' : ''}
+    </div>`;
+  });
+  html += `</div>
+  <div class="signNote">每 7 天为一轮，第 7 天可领 <b>魂晶 ×50 + 金币 ×50万 + 宠物蛋</b></div>
+  <button class="signBtn" id="signClaimBtn" ${done ? 'disabled' : ''}>${done ? '今日已签到' : `签到领取第 ${idx + 1} 天奖励`}</button>`;
+  body.innerHTML = html;
+  const b = $('signClaimBtn');
+  if(b) b.onclick = signClaim;
+  try{ emojify(body); }catch(e){}
+}
+
+/* 转盘页 */
+function renderWheelTab(body){
+  body.innerHTML = `
+    <div class="whWrap">
+      <div class="whPin"></div>
+      <div class="whDisc" id="wheelDisc"></div>
+    </div>
+    <div class="whInfo">
+      每次消耗 <b>${fmt(WHEEL_COST)}</b> 金币 · 当前金币 <b>${fmt(S.gold || 0)}</b>
+    </div>
+    <button class="whBtn" id="wheelBtn">开始抽奖</button>
+    <div class="whList">
+      ${WHEEL.map(w => `<div class="whItem${w.rare ? ' rare' : ''}">
+        <span class="wiIco">${w.emj}</span>
+        <span class="wiName">${w.name}</span>
+        <span class="wiW">${(w.w / WHEEL.reduce((a, b) => a + b.w, 0) * 100).toFixed(1)}%</span>
+      </div>`).join('')}
+    </div>`;
+  renderWheel();
+  const b = $('wheelBtn');
+  if(b) b.onclick = wheelSpin;
+  try{ emojify(body); }catch(e){}
+}
+
+function renderWheel(){
+  const disc = $('wheelDisc'); if(!disc) return;
+  const n = WHEEL.length, seg = 360 / n;
+  const stops = WHEEL.map((w, i) => `${w.c} ${i * seg}deg ${(i + 1) * seg}deg`).join(',');
+  disc.style.background = `conic-gradient(${stops})`;
+  // 扇区文字
+  let html = '';
+  WHEEL.forEach((w, i) => {
+    const ang = i * seg + seg / 2;
+    html += `<div class="whSeg" style="transform:rotate(${ang}deg) translate(0,-62px) rotate(${-ang}deg)">${w.emj}</div>`;
+  });
+  disc.innerHTML = html;
+  try{ emojify(disc); }catch(e){}
+}
+
 const absDay = () => Math.floor(Date.now() / 86400000);
 function dailyGroup(){ return absDay() % DAY_GROUPS; }     // 第11天回到第1天
 function dailyDayNo(){ return dailyGroup() + 1; }
@@ -5887,22 +6257,26 @@ function renderDailyBtn(){
   const mDone = MILESTONES.filter(m => msClaimed(m.id)).length;
   const mReady = MILESTONES.filter(m => !msClaimed(m.id) && m.cur() >= m.goal).length;
   if(mReady > 0) $('dailySub').textContent = `第${dailyDayNo()}天 ${done}/${ts.length} · 🚩${mReady}`;
+  try{ if(!signDone()) $('dailySub').textContent += ' · 🎁可签到'; }catch(e){}
 }
 function renderDaily(){
   dailyReset();
   $('dailySoul').textContent = fmt(S.soul || 0);
   const tabs = $('dailyTabs');
   tabs.innerHTML = '';
-  ['每日', '里程碑'].forEach(c => {
+  [['每日','📅 每日任务'], ['里程碑','🚩 里程碑'], ['签到','🎁 签到'], ['转盘','🎡 转盘']].forEach(([c, lbl]) => {
     const b = document.createElement('button');
     b.className = 'shopTab' + (c === dailyTab ? ' on' : '');
-    b.textContent = c === '每日' ? '📅 每日任务' : `🚩 里程碑`;
+    b.textContent = lbl;
     b.onclick = () => { dailyTab = c; renderDaily(); };
     tabs.appendChild(b);
   });
 
   const body = $('dailyBody');
   body.innerHTML = '';
+
+  if(dailyTab === '签到'){ renderSign(body); return; }
+  if(dailyTab === '转盘'){ renderWheelTab(body); return; }
 
   if(dailyTab === '每日'){
     const h = document.createElement('div');
@@ -7150,6 +7524,7 @@ function towerWin(){
   const n = towerFloor() + 1;
   S.tower.floor = n;
   if(n > towerMax()) S.tower.max = n;
+  try{ if(typeof syncScore === 'function') syncScore(true); }catch(e){}
   const rw = towerReward(n);
   addGold(rw.gold * upTowerMult()); addExp(rw.exp * upTowerMult());
   if(rw.soul) S.soul += rw.soul;
@@ -8455,9 +8830,162 @@ function handleImportFile(file){
   rd.readAsText(file, 'utf-8');
 }
 
+/* ======================= 排行榜（服务端真实玩家数据） =======================
+   window.__API__ 由服务端注入；不存在时（直接打开静态 HTML）排行榜不可用。
+   数据只能写入服务端 session 对应的账号，客户端无法伪造他人成绩。
+=========================================================================== */
+const RANK_API = (typeof window !== 'undefined' && window.__API__) ? window.__API__ : '';
+let rankBy = 'level';
+let rankCache = null;
+
+function rankEnabled(){ return !!RANK_API; }
+
+/* 大数压缩显示：1.23e30 → 1.23e30；普通数加千分位 */
+function rankNum(v){
+  v = Number(v) || 0;
+  if(!isFinite(v)) return '0';
+  if(v >= 1e12){
+    const e = Math.floor(Math.log10(v));
+    const m = v / Math.pow(10, e);
+    return m.toFixed(2) + 'e' + e;
+  }
+  if(v >= 1e6){
+    if(v >= 1e9) return (v/1e9).toFixed(2) + 'B';
+    if(v >= 1e6) return (v/1e6).toFixed(2) + 'M';
+  }
+  return Math.floor(v).toLocaleString('en-US');
+}
+
+/* 采集当前存档成绩 */
+function collectScore(){
+  return {
+    level:      Number(S.level) || 1,
+    gold:       Number(S.gold) || 0,
+    power:      (typeof playerPower === 'function') ? (Number(playerPower()) || 0) : 0,
+    rebirth:    Number(S.rb) || 0,
+    tower:      (typeof towerMax === 'function') ? (Number(towerMax()) || 0) : 0,
+    total_exp:  Number((S.st && S.st.expTotal) || 0),
+    reached_end: (S.beat || S.win || S.cleared || (S.st && S.st.end)) ? 1 : 0
+  };
+}
+
+/* 上报成绩（节流由服务端控制：5 秒） */
+let rkSyncing = false;
+function syncScore(silent){
+  if(!rankEnabled()) return;
+  if(rkSyncing) return;
+  rkSyncing = true;
+  const d = collectScore();
+  const body = new URLSearchParams();
+  body.set('action', 'submit');
+  for(const k in d) body.set(k, String(d[k]));
+  fetch(RANK_API, {method:'POST', body:body, credentials:'same-origin'})
+    .then(r => r.json())
+    .then(j => {
+      if(!silent && j && j.ok) toast('🏆 成绩已同步到排行榜', 1800);
+      if(j && j.ok) renderRankSub();
+    })
+    .catch(()=>{ if(!silent) toast('同步失败，请检查网络', 1800); })
+    .finally(()=>{ rkSyncing = false; });
+}
+
+/* 拉取排行榜 */
+function loadRank(){
+  const list = $('rkList'), me = $('rkMe'), hint = $('rkHint'), tot = $('rkTotal');
+  if(list) list.innerHTML = '<div class="rkLoad">加载中…</div>';
+  fetch(`${RANK_API}?action=rank&by=${encodeURIComponent(rankBy)}&limit=50`, {credentials:'same-origin'})
+    .then(r => r.json())
+    .then(j => {
+      rankCache = j;
+      if(tot) tot.textContent = j.total || 0;
+      if(me){
+        if(j.me){
+          me.innerHTML = `我的排名 <b>第 ${j.me.rank} 名</b> · ${escapeHtml(j.me.name)}<br>`
+            + `<span class="no">Lv.${rankNum(j.me.level)} · 战力 ${rankNum(j.me.power)} · 金币 ${rankNum(j.me.gold)}`
+            + ` · 轮回 ${j.me.rebirth} 次 · 爬塔 ${j.me.tower} 层</span>`;
+        }else{
+          me.innerHTML = `<span class="no">你还没有上榜记录，点下方「同步我的成绩」提交当前进度。</span>`;
+        }
+      }
+      if(list){
+        if(!j.list || !j.list.length){
+          list.innerHTML = '<div class="rkEmpty">排行榜还没有数据<br>成为第一个上榜的玩家吧</div>';
+        }else{
+          const lb = {level:'等级', power:'战力', gold:'金币', rebirth:'轮回', tower:'爬塔'}[rankBy] || '等级';
+          list.innerHTML = j.list.map(r => {
+            const cls = r.rank <= 3 ? ' t' + r.rank : '';
+            const v = {level:r.level, power:r.power, gold:r.gold, rebirth:r.rebirth, tower:r.tower}[rankBy];
+            const sub = (rankBy === 'level')
+              ? `战力 ${rankNum(r.power)} · 金币 ${rankNum(r.gold)}`
+              : `Lv.${rankNum(r.level)} · ${r.rebirth} 次轮回`;
+            return `<div class="rkRow${r.me ? ' me' : ''}">
+              <div class="rkNo${cls}">${r.rank}</div>
+              <div class="rkInfo">
+                <div class="rkName">${escapeHtml(r.name)}${r.end ? '<span class="end">通关</span>' : ''}${r.me ? ' <span class="end">(我)</span>' : ''}</div>
+                <div class="rkSub">${sub}</div>
+              </div>
+              <div class="rkVal">${rankNum(v)}<small>${lb}</small></div>
+            </div>`;
+          }).join('');
+        }
+      }
+      if(hint){
+        hint.textContent = j.ok
+          ? `数据来自服务器，共 ${j.total || 0} 位玩家 · 每 60 秒自动同步`
+          : '读取失败';
+      }
+    })
+    .catch(()=>{
+      if(list) list.innerHTML = '<div class="rkEmpty">加载失败，请检查网络后重试</div>';
+    });
+}
+
+function escapeHtml(t){
+  return String(t == null ? '' : t).replace(/[&<>"']/g, c => (
+    {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]
+  ));
+}
+
+/* 按钮副标题：显示我的名次 */
+function renderRankSub(){
+  const el = $('rankSub'); if(!el) return;
+  if(!rankEnabled()){ el.textContent = '需登录'; return; }
+  fetch(`${RANK_API}?action=me`, {credentials:'same-origin'})
+    .then(r => r.json())
+    .then(j => {
+      el.textContent = (j && j.me) ? `我 第${j.me.rank}名` : '未上榜';
+    })
+    .catch(()=>{ el.textContent = '玩家排名'; });
+}
+
+function openRank(){
+  if(!rankEnabled()){
+    toast('排行榜需要登录后才能使用', 2200);
+    return;
+  }
+  openModal('rankModal');
+  loadRank();
+  syncScore(true);
+}
+
 /* ======================= 更新日志 ======================= */
 /* 从 v1.0 到现在版本的全部更新记录（新版本在上） */
 const CHANGELOG = [
+  {ver:'v1.7.1', tag:'签到与转盘', items:[
+    '连续签到：7 天一轮，每天可领一次，断签从第 1 天重新开始',
+    '签到第 7 天大奖：魂晶 ×50 + 金币 ×50万 + 宠物蛋（随机宠物）',
+    '幸运转盘：消耗 5 万金币抽一次，8 个奖项概率不同，带旋转动画',
+    '转盘稀有奖：魂晶 ×10 / 随机装备 / 金币 ×20万 / 随机宠物（共 34%）',
+    '入口在「日常」弹窗，新增签到、转盘两个页签；按钮提示「🎁可签到」',
+    '修复「陈列室」按钮标签损坏导致主界面按钮错乱的问题'
+  ]},
+  {ver:'v1.7.0', tag:'排行榜', items:[
+    '新增玩家排行榜，显示其他玩家的真实数据（服务器记录，非本地假数据）',
+    '五个排名维度：等级 / 战力 / 金币 / 轮回次数 / 爬塔层数',
+    '升级、重生、刷新爬塔记录时自动同步，另有 60 秒定时同步',
+    '自己高亮显示，前三名金银铜标记，通关玩家带「通关」标签',
+    '成绩只能写入自己账号，服务端用 session 识别，无法伪造他人数据'
+  ]},
   {ver:'v1.6.4', tag:'精简设置', items:[
     '移除音量调节滑块，音效改为固定音量，仅保留一键开关',
     '设置界面更简洁'
@@ -8574,7 +9102,7 @@ function renderLogBtn(){
 
 /* ======================= 玩法介绍 ======================= */
 /* ======================= 公告 ======================= */
-const GAME_VER = 'v1.6.4';               // 游戏版本号（主菜单与公告页脚显示）
+const GAME_VER = 'v1.7.1';               // 游戏版本号（主菜单与公告页脚显示）
 const NOTICE_VER = 1;                    // 公告版本号：改动公告内容时 +1，会自动重新弹出
 const NOTICE_DATE = '2026-10-16';
 const NOTICES = [
@@ -8672,6 +9200,8 @@ const GUIDE = [
    ['收录词条：吸血、反击、破防、穿透、暴伤、韧性、狂怒、回复等', '按分类浏览：战斗 / 养成 / 资源 / 系统', '支持关键词搜索']],
   ['📤 存档导入 / 导出', '可把存档导出成文件保存到本地，换设备时再导入回来。',
    ['点「导出存档」自动生成 .txt 文件并下载，文件名 = 存档名 + 的存档备份文件.txt', '点「导入存档」会弹出文件选择器，选中备份文件即可恢复', '导入会覆盖当前存档，操作前有确认提示', '设置里的文本框仍保留代码备份方式，可手动复制粘贴']],
+  ['🏆 排行榜', '和其他玩家比一比进度，数据来自服务器。',
+   ['排行榜显示的是其他玩家的真实数据，由服务器统一记录', '按等级 / 战力 / 金币 / 轮回次数 / 爬塔层数五个维度排名', '每次升级、重生、刷新爬塔记录都会自动同步（也有 60 秒定时同步）', '也能手动点「同步我的成绩」立即提交当前进度', '自己在榜上的位置会高亮显示，榜首前三名有金银铜色标记', '需要登录后才能使用，成绩只能写入你自己的账号']],
   ['🎒 背包扩张', '背包格子可在商店购买扩容道具永久增加。',
    ['扩容券 +1 格（上限 80 张）· 须弥囊·伍 +5 · 乾坤袋·拾 +10', '须弥宝阁 +20（Lv.70）· 芥子纳天 +40（Lv.95）', '背包总上限已提升至 120 格']],
   ['🌳 升级树·神通', '升级树新增「神通」分类，补强八维属性与专精效果。',
@@ -9101,7 +9631,11 @@ function skipPoem(){
   if(poemTimer){ clearInterval(poemTimer); poemTimer = null; }
   finishPoem();
 }
-function finishPoem(){                      // 滚完（或跳过）统一进入结束页
+function finishPoem(){
+  try{
+    S.beat = true;
+    if(typeof syncScore === 'function') syncScore(true);
+  }catch(e){}                      // 滚完（或跳过）统一进入结束页
   playingPoem = false;
   showAfter();
 }
