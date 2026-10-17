@@ -1608,7 +1608,6 @@
   </div>
   <div class="mainRow">
     <button class="mainBtn on gal" id="galBtn"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:-2.7px;flex:none;display:inline-block"><path d="M3 21h18" fill="none" stroke="#c58aff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 21V10l7-5 7 5v11" fill="none" stroke="#c58aff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21v-6h6v6" fill="none" stroke="#c58aff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 陈列室<span class="sub" id="galSub">收藏展示</span></button>
-    <button class="mainBtn on rank" id="rankBtn"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:-2.7px;flex:none;display:inline-block"><path d="M8 21h8" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 4h12v5a6 6 0 0 1-12 0z" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6H3v2a4 4 0 0 0 4 4" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 6h3v2a4 4 0 0 1-4 4" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 9v5" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 14h5l-.5 4h-4z" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 排行榜<span class="sub" id="rankSub">玩家排名</span></button>
   </div>
 
   <div class="mainRow">
@@ -1815,31 +1814,6 @@
     <div class="modalHead"><b><svg class="ico" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:-2.7px;flex:none;display:inline-block"><path d="M9 3h6" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 3v5l-5 11a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-11V3" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 16h10" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 合成工坊</b><button class="close" data-close><svg class="ico" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:-2.7px;flex:none;display:inline-block"><path d="M6 6 L18 18 M18 6 L6 18" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
     <div class="modalBody" id="craftBody"></div>
     <div class="petNote">3 个低阶物品可合成 1 个高阶 · 同部位 3 件装备可升阶</div>
-  </div>
-</div>
-
-<!-- ===== 排行榜 ===== -->
-<div class="modal" id="rankModal">
-  <div class="modalBox">
-    <div class="modalHead">
-      <b><svg class="ico" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:-2.7px;flex:none;display:inline-block"><path d="M8 21h8" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 4h12v5a6 6 0 0 1-12 0z" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6H3v2a4 4 0 0 0 4 4" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 6h3v2a4 4 0 0 1-4 4" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 9v5" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 14h5l-.5 4h-4z" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 玩家排行榜 <span style="font-size:11px;opacity:.6">共 <span id="rkTotal">0</span> 位玩家</span></b>
-      <button class="close" data-close>✕</button>
-    </div>
-    <div class="modalBody">
-      <div class="rkTabs" id="rkTabs">
-        <button class="rkTab on" data-by="level">等级</button>
-        <button class="rkTab" data-by="power">战力</button>
-        <button class="rkTab" data-by="gold">金币</button>
-        <button class="rkTab" data-by="rebirth">轮回</button>
-        <button class="rkTab" data-by="tower">爬塔</button>
-      </div>
-      <div class="rkMe" id="rkMe"></div>
-      <div class="rkList" id="rkList"></div>
-      <div class="petNote" id="rkHint"></div>
-    </div>
-    <div style="padding:0 16px 16px">
-      <button class="ntBtn" id="rkSync">同步我的成绩</button>
-    </div>
   </div>
 </div>
 
@@ -5487,14 +5461,7 @@ function showStart(){
   hideTip();
   const gv = $('gameVer'); if(gv) gv.textContent = '当前版本 ' + GAME_VER;
   try{ renderLogBtn(); }catch(e){}
-  // 排行榜：进游戏自动同步一次，之后每 60 秒
-  try{
-    if(typeof rankEnabled === 'function' && rankEnabled()){
-      setTimeout(()=>{ syncScore(true); renderRankSub(); }, 2500);
-      setInterval(()=>{ syncScore(true); }, 60000);
-    }
-  }catch(e){}
-  // 启动页数字动态化，避免写死导致与实际内容不符
+    // 启动页数字动态化，避免写死导致与实际内容不符
   const hs = $('hintScene'), ha = $('hintAch'), hshop = $('hintShop');
   if(hs) hs.textContent = SCENES.length;
   if(ha) ha.textContent = ACHS.length;
@@ -8834,147 +8801,12 @@ function handleImportFile(file){
   rd.readAsText(file, 'utf-8');
 }
 
-/* ======================= 排行榜（服务端真实玩家数据） =======================
-   window.__API__ 由服务端注入；不存在时（直接打开静态 HTML）排行榜不可用。
-   数据只能写入服务端 session 对应的账号，客户端无法伪造他人成绩。
-=========================================================================== */
-const RANK_API = (typeof window !== 'undefined' && window.__API__) ? window.__API__ : '';
-let rankBy = 'level';
-let rankCache = null;
-
-function rankEnabled(){ return !!RANK_API; }
-
-/* 大数压缩显示：1.23e30 → 1.23e30；普通数加千分位 */
-function rankNum(v){
-  v = Number(v) || 0;
-  if(!isFinite(v)) return '0';
-  if(v >= 1e12){
-    const e = Math.floor(Math.log10(v));
-    const m = v / Math.pow(10, e);
-    return m.toFixed(2) + 'e' + e;
-  }
-  if(v >= 1e6){
-    if(v >= 1e9) return (v/1e9).toFixed(2) + 'B';
-    if(v >= 1e6) return (v/1e6).toFixed(2) + 'M';
-  }
-  return Math.floor(v).toLocaleString('en-US');
-}
-
-/* 采集当前存档成绩 */
-function collectScore(){
-  return {
-    level:      Number(S.level) || 1,
-    gold:       Number(S.gold) || 0,
-    power:      (typeof playerPower === 'function') ? (Number(playerPower()) || 0) : 0,
-    rebirth:    Number(S.rb) || 0,
-    tower:      (typeof towerMax === 'function') ? (Number(towerMax()) || 0) : 0,
-    total_exp:  Number((S.st && S.st.expTotal) || 0),
-    reached_end: (S.beat || S.win || S.cleared || (S.st && S.st.end)) ? 1 : 0
-  };
-}
-
-/* 上报成绩（节流由服务端控制：5 秒） */
-let rkSyncing = false;
-function syncScore(silent){
-  if(!rankEnabled()) return;
-  if(rkSyncing) return;
-  rkSyncing = true;
-  const d = collectScore();
-  const body = new URLSearchParams();
-  body.set('action', 'submit');
-  for(const k in d) body.set(k, String(d[k]));
-  fetch(RANK_API, {method:'POST', body:body, credentials:'same-origin'})
-    .then(r => r.json())
-    .then(j => {
-      if(!silent && j && j.ok) toast('🏆 成绩已同步到排行榜', 1800);
-      if(j && j.ok) renderRankSub();
-    })
-    .catch(()=>{ if(!silent) toast('同步失败，请检查网络', 1800); })
-    .finally(()=>{ rkSyncing = false; });
-}
-
-/* 拉取排行榜 */
-function loadRank(){
-  const list = $('rkList'), me = $('rkMe'), hint = $('rkHint'), tot = $('rkTotal');
-  if(list) list.innerHTML = '<div class="rkLoad">加载中…</div>';
-  fetch(`${RANK_API}?action=rank&by=${encodeURIComponent(rankBy)}&limit=50`, {credentials:'same-origin'})
-    .then(r => r.json())
-    .then(j => {
-      rankCache = j;
-      if(tot) tot.textContent = j.total || 0;
-      if(me){
-        if(j.me){
-          me.innerHTML = `我的排名 <b>第 ${j.me.rank} 名</b> · ${escapeHtml(j.me.name)}<br>`
-            + `<span class="no">Lv.${rankNum(j.me.level)} · 战力 ${rankNum(j.me.power)} · 金币 ${rankNum(j.me.gold)}`
-            + ` · 轮回 ${j.me.rebirth} 次 · 爬塔 ${j.me.tower} 层</span>`;
-        }else{
-          me.innerHTML = `<span class="no">你还没有上榜记录，点下方「同步我的成绩」提交当前进度。</span>`;
-        }
-      }
-      if(list){
-        if(!j.list || !j.list.length){
-          list.innerHTML = '<div class="rkEmpty">排行榜还没有数据<br>成为第一个上榜的玩家吧</div>';
-        }else{
-          const lb = {level:'等级', power:'战力', gold:'金币', rebirth:'轮回', tower:'爬塔'}[rankBy] || '等级';
-          list.innerHTML = j.list.map(r => {
-            const cls = r.rank <= 3 ? ' t' + r.rank : '';
-            const v = {level:r.level, power:r.power, gold:r.gold, rebirth:r.rebirth, tower:r.tower}[rankBy];
-            const sub = (rankBy === 'level')
-              ? `战力 ${rankNum(r.power)} · 金币 ${rankNum(r.gold)}`
-              : `Lv.${rankNum(r.level)} · ${r.rebirth} 次轮回`;
-            return `<div class="rkRow${r.me ? ' me' : ''}">
-              <div class="rkNo${cls}">${r.rank}</div>
-              <div class="rkInfo">
-                <div class="rkName">${escapeHtml(r.name)}${r.end ? '<span class="end">通关</span>' : ''}${r.me ? ' <span class="end">(我)</span>' : ''}</div>
-                <div class="rkSub">${sub}</div>
-              </div>
-              <div class="rkVal">${rankNum(v)}<small>${lb}</small></div>
-            </div>`;
-          }).join('');
-        }
-      }
-      if(hint){
-        hint.textContent = j.ok
-          ? `数据来自服务器，共 ${j.total || 0} 位玩家 · 每 60 秒自动同步`
-          : '读取失败';
-      }
-    })
-    .catch(()=>{
-      if(list) list.innerHTML = '<div class="rkEmpty">加载失败，请检查网络后重试</div>';
-    });
-}
-
-function escapeHtml(t){
-  return String(t == null ? '' : t).replace(/[&<>"']/g, c => (
-    {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]
-  ));
-}
-
-/* 按钮副标题：显示我的名次 */
-function renderRankSub(){
-  const el = $('rankSub'); if(!el) return;
-  if(!rankEnabled()){ el.textContent = '需登录'; return; }
-  fetch(`${RANK_API}?action=me`, {credentials:'same-origin'})
-    .then(r => r.json())
-    .then(j => {
-      el.textContent = (j && j.me) ? `我 第${j.me.rank}名` : '未上榜';
-    })
-    .catch(()=>{ el.textContent = '玩家排名'; });
-}
-
-function openRank(){
-  if(!rankEnabled()){
-    toast('排行榜需要登录后才能使用', 2200);
-    return;
-  }
-  openModal('rankModal');
-  loadRank();
-  syncScore(true);
-}
-
 /* ======================= 更新日志 ======================= */
 /* 从 v1.0 到现在版本的全部更新记录（新版本在上） */
 const CHANGELOG = [
+  {ver:'v1.7.3', tag:'删除功能', items:[
+    '删除了排行榜功能'
+  ]},
   {ver:'v1.7.2', tag:'布局修复', items:[
     '修复主界面按钮布局错乱：两处按钮行标签未闭合，导致按钮挤成 4 个、5 个一行',
     '修复「陈列室」按钮残留的重复碎片（页面上多出一个游离的「陈列室 收藏展示」文本）',
@@ -9211,8 +9043,6 @@ const GUIDE = [
    ['收录词条：吸血、反击、破防、穿透、暴伤、韧性、狂怒、回复等', '按分类浏览：战斗 / 养成 / 资源 / 系统', '支持关键词搜索']],
   ['📤 存档导入 / 导出', '可把存档导出成文件保存到本地，换设备时再导入回来。',
    ['点「导出存档」自动生成 .txt 文件并下载，文件名 = 存档名 + 的存档备份文件.txt', '点「导入存档」会弹出文件选择器，选中备份文件即可恢复', '导入会覆盖当前存档，操作前有确认提示', '设置里的文本框仍保留代码备份方式，可手动复制粘贴']],
-  ['🏆 排行榜', '和其他玩家比一比进度，数据来自服务器。',
-   ['排行榜显示的是其他玩家的真实数据，由服务器统一记录', '按等级 / 战力 / 金币 / 轮回次数 / 爬塔层数五个维度排名', '每次升级、重生、刷新爬塔记录都会自动同步（也有 60 秒定时同步）', '也能手动点「同步我的成绩」立即提交当前进度', '自己在榜上的位置会高亮显示，榜首前三名有金银铜色标记', '需要登录后才能使用，成绩只能写入你自己的账号']],
   ['🎒 背包扩张', '背包格子可在商店购买扩容道具永久增加。',
    ['扩容券 +1 格（上限 80 张）· 须弥囊·伍 +5 · 乾坤袋·拾 +10', '须弥宝阁 +20（Lv.70）· 芥子纳天 +40（Lv.95）', '背包总上限已提升至 120 格']],
   ['🌳 升级树·神通', '升级树新增「神通」分类，补强八维属性与专精效果。',
