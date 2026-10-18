@@ -812,132 +812,6 @@
   .shopItem .own{font-size:9px;opacity:.55;margin-top:4px;text-align:right}
 
   /* 成就 */
-  /* 排行榜 */
-  .mainBtn.rank{--c:#ffd76e}
-  .rkTabs{display:flex;gap:5px;margin-bottom:10px;flex-wrap:wrap}
-  .rkTab{
-    font-size:11px;font-weight:800;padding:6px 12px;border-radius:999px;cursor:pointer;
-    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#e8eaf6;
-    font-family:inherit;letter-spacing:.5px
-  }
-  .rkTab.on{background:linear-gradient(135deg,#ffd76e,#ff9d5c);color:#3a2405;border-color:transparent}
-  .rkMe{
-    background:rgba(255,215,110,.1);border:1px solid rgba(255,215,110,.28);
-    border-radius:12px;padding:9px 11px;margin-bottom:10px;font-size:11.5px;line-height:1.7
-  }
-  .rkMe b{color:#ffd76e}
-  .rkMe .no{opacity:.55}
-  .rkList{display:flex;flex-direction:column;gap:6px}
-  .rkRow{
-    display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:11px;
-    background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07)
-  }
-  .rkRow.me{
-    background:rgba(255,215,110,.12);border-color:rgba(255,215,110,.35)
-  }
-  .rkNo{
-    width:24px;height:24px;flex:none;border-radius:50%;display:flex;align-items:center;
-    justify-content:center;font-size:11px;font-weight:900;
-    background:rgba(255,255,255,.08);color:#c9cee8
-  }
-  .rkNo.t1{background:linear-gradient(135deg,#ffe28a,#ffb35c);color:#3a2405}
-  .rkNo.t2{background:linear-gradient(135deg,#e8eef8,#b8c4d8);color:#2a2f42}
-  .rkNo.t3{background:linear-gradient(135deg,#f0b98a,#c98a5c);color:#3a2405}
-  .rkInfo{flex:1;min-width:0}
-  .rkName{font-size:12.5px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .rkName .end{font-size:9px;color:#ffd76e;margin-left:4px}
-  .rkSub{font-size:10px;opacity:.55;margin-top:2px}
-  .rkVal{font-size:13px;font-weight:900;color:#ffd76e;text-align:right;flex:none;max-width:38%}
-  .rkVal small{display:block;font-size:9px;font-weight:600;opacity:.5;color:#c9cee8;margin-top:1px}
-  .rkEmpty{font-size:12px;opacity:.5;text-align:center;padding:22px 0;line-height:1.8}
-  .rkLoad{font-size:12px;opacity:.6;text-align:center;padding:22px 0}
-
-  /* ===== 连续签到 ===== */
-  .signTop{text-align:center;padding:6px 0 14px}
-  .signBig{font-size:16px;font-weight:900}
-  .signBig b{color:#ffd76e;font-size:22px}
-  .signTip{font-size:10.5px;opacity:.55;margin-top:5px}
-  .signGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
-  .signCell{
-    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
-    border-radius:12px;padding:9px 4px;text-align:center;position:relative;overflow:hidden
-  }
-  .signCell.now{
-    border-color:rgba(255,215,110,.55);background:rgba(255,215,110,.11);
-    box-shadow:0 0 0 1px rgba(255,215,110,.2), 0 4px 14px rgba(255,215,110,.16)
-  }
-  .signCell.today{border-color:rgba(78,222,128,.45);background:rgba(78,222,128,.09)}
-  .signCell.past{opacity:.42}
-  .scDay{font-size:9px;font-weight:800;opacity:.6;letter-spacing:.5px}
-  .scIco{margin:5px 0 3px;line-height:1}
-  .scName{font-size:9px;line-height:1.4;opacity:.8;min-height:26px;display:flex;align-items:center;justify-content:center}
-  .scDone,.scNow{
-    position:absolute;top:0;right:0;font-size:7.5px;font-weight:800;
-    padding:2px 5px;border-bottom-left-radius:7px;letter-spacing:.3px
-  }
-  .scDone{background:rgba(78,222,128,.85);color:#0a2a14}
-  .scNow{background:linear-gradient(135deg,#ffd76e,#ffb35c);color:#3a2405}
-  .signNote{
-    font-size:10px;opacity:.55;text-align:center;margin:11px 0 10px;line-height:1.7
-  }
-  .signNote b{color:#ffd76e;opacity:.9}
-  .signBtn{
-    width:100%;padding:12px;border:none;border-radius:13px;cursor:pointer;
-    font-size:14px;font-weight:900;letter-spacing:1px;
-    background:linear-gradient(135deg,#ffd98a,#ffb35c,#ff9d5c);color:#3a2405;
-    box-shadow:0 3px 0 #c9832f;transition:transform .1s,box-shadow .1s
-  }
-  .signBtn:active{transform:translateY(3px);box-shadow:0 0 0 #c9832f}
-  .signBtn:disabled{
-    background:rgba(255,255,255,.08);color:rgba(255,255,255,.4);
-    box-shadow:none;cursor:default;transform:none
-  }
-
-  /* ===== 幸运转盘 ===== */
-  .whWrap{
-    position:relative;width:230px;height:230px;margin:6px auto 14px;
-    display:flex;align-items:center;justify-content:center
-  }
-  .whDisc{
-    width:200px;height:200px;border-radius:50%;position:relative;
-    border:4px solid rgba(255,215,110,.55);
-    box-shadow:0 0 0 5px rgba(0,0,0,.32), 0 8px 26px rgba(0,0,0,.42);
-    transform:rotate(0deg)
-  }
-  .whSeg{
-    position:absolute;left:50%;top:50%;margin:-13px 0 0 -13px;
-    width:26px;height:26px;display:flex;align-items:center;justify-content:center;
-    font-size:17px;line-height:1;transform-origin:0 0
-  }
-  .whPin{
-    position:absolute;top:2px;left:50%;margin-left:-11px;z-index:3;
-    width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;
-    border-top:22px solid #ffd76e;
-    filter:drop-shadow(0 2px 3px rgba(0,0,0,.5))
-  }
-  .whInfo{
-    text-align:center;font-size:11px;opacity:.7;margin-bottom:10px;line-height:1.8
-  }
-  .whInfo b{color:#ffd76e}
-  .whBtn{
-    width:100%;padding:12px;border:none;border-radius:13px;cursor:pointer;
-    font-size:14px;font-weight:900;letter-spacing:1px;
-    background:linear-gradient(135deg,#ff9bd5,#c58aff);color:#2b1240;
-    box-shadow:0 3px 0 #7a3f9e;transition:transform .1s,box-shadow .1s
-  }
-  .whBtn:active{transform:translateY(3px);box-shadow:0 0 0 #7a3f9e}
-  .whBtn:disabled{opacity:.5;cursor:default;transform:none}
-  .whList{margin-top:13px;display:grid;grid-template-columns:1fr 1fr;gap:5px}
-  .whItem{
-    display:flex;align-items:center;gap:6px;font-size:10px;
-    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
-    border-radius:9px;padding:6px 8px
-  }
-  .whItem.rare{border-color:rgba(255,155,213,.3);background:rgba(255,155,213,.07)}
-  .wiIco{font-size:13px;flex:none}
-  .wiName{flex:1;opacity:.82;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .wiW{font-size:9px;font-weight:800;opacity:.55;flex:none}
-
   /* 更新日志 */
   .logVer{
     background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);
@@ -1608,13 +1482,10 @@
   </div>
   <div class="mainRow">
     <button class="mainBtn on gal" id="galBtn"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:-2.7px;flex:none;display:inline-block"><path d="M3 21h18" fill="none" stroke="#c58aff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 21V10l7-5 7 5v11" fill="none" stroke="#c58aff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21v-6h6v6" fill="none" stroke="#c58aff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 陈列室<span class="sub" id="galSub">收藏展示</span></button>
-  </div>
-
-  <div class="mainRow">
     <button class="mainBtn on mount" id="mountBtn"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:-2.7px;flex:none;display:inline-block"><path d="M4 20v-6c0-4 3-7 8-7s8 3 8 7v6" fill="none" stroke="#9dffcf" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 7V4" fill="none" stroke="#9dffcf" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 14h16" fill="none" stroke="#9dffcf" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> 坐骑<span class="sub" id="mountSub">未拥有</span></button>
-    <button class="mainBtn on hon" id="ptBtn"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:-2.7px;flex:none;display:inline-block"><path d="M8 21h8" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 14v4" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 4h10v5a5 5 0 0 1-10 0z" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 成就商店<span class="sub" id="ptSub">0 点</span></button>
   </div>
   <div class="mainRow">
+    <button class="mainBtn on hon" id="ptBtn"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:-2.7px;flex:none;display:inline-block"><path d="M8 21h8" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 14v4" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 4h10v5a5 5 0 0 1-10 0z" fill="none" stroke="#ffd76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> 成就商店<span class="sub" id="ptSub">0 点</span></button>
     <button class="mainBtn on set" id="setBtn"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:-2.7px;flex:none;display:inline-block"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="none" stroke="#9aa0c4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 9 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 4.6 9a1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H9a1.6 1.6 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z" fill="none" stroke="#9aa0c4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> 设置<span class="sub" id="setSub">1×</span></button>
   </div>
 
@@ -1816,6 +1687,8 @@
     <div class="petNote">3 个低阶物品可合成 1 个高阶 · 同部位 3 件装备可升阶</div>
   </div>
 </div>
+
+>
 
 <!-- 图鉴 -->
 <div class="modal" id="codexModal">
@@ -3907,7 +3780,7 @@ function tryUpgrade(quiet){
     if(bagSlots() > bsBefore) batchUp.bagUp = true;
     S.st.lvMax = Math.max(S.st.lvMax || 1, S.level);
     addDaily('up', 1);
-    try{ if(typeof syncScore === 'function') syncScore(true); }catch(e){}
+    
     return true;
   }
   sfx('up');
@@ -3918,7 +3791,7 @@ function tryUpgrade(quiet){
   $('avatar').classList.add('levelup');
   log(`升级！达到 Lv.${S.level}（${t[1]}），扣除 ${fmt(need)} EXP，获得 ${10*S.level} 金币`, 'up');
   toast(`🎉 升到 Lv.${S.level}，称号：${t[1]}`);
-  try{ if(typeof syncScore === 'function') syncScore(true); }catch(e){}
+  
   if(S.level % SCENE_STEP === 0){
     const idx = S.level / SCENE_STEP;
     const sc = SCENES[idx];
@@ -4702,14 +4575,6 @@ $('mountBtn').onclick = () => { renderMount(); openModal('mountModal'); };
 $('durBtn').onclick = () => { renderDur(); openModal('durModal'); };
 $('gloBtn').onclick = () => { renderGlo(); openModal('gloModal'); };
 $('galBtn').onclick = () => { renderGal(); openModal('galModal'); };
-$('rankBtn').onclick = openRank;
-$('rkSync').onclick = () => syncScore(false);
-$('rkTabs').onclick = e => {
-  const t = e.target.closest('.rkTab'); if(!t) return;
-  rankBy = t.getAttribute('data-by');
-  [...$('rkTabs').children].forEach(b => b.classList.toggle('on', b === t));
-  loadRank();
-};
 $('gloSearch').oninput = e => { gloKey = e.target.value; renderGlo(); };
 $('bagSearch').oninput = e => { bagKey = e.target.value; renderBag(); };
 $('towerBtn').onclick = () => { renderTower(); openModal('towerModal'); };
@@ -5461,7 +5326,9 @@ function showStart(){
   hideTip();
   const gv = $('gameVer'); if(gv) gv.textContent = '当前版本 ' + GAME_VER;
   try{ renderLogBtn(); }catch(e){}
-    // 启动页数字动态化，避免写死导致与实际内容不符
+  try{
+  }catch(e){}
+  // 启动页数字动态化，避免写死导致与实际内容不符
   const hs = $('hintScene'), ha = $('hintAch'), hshop = $('hintShop');
   if(hs) hs.textContent = SCENES.length;
   if(ha) ha.textContent = ACHS.length;
@@ -5560,6 +5427,7 @@ function enterGame(id){
   $('log').innerHTML = '';
   selSlot = -1; shopTab = '挂机';
   fightTimer = rollFightInterval();
+  S.evtPending = null; S.evtAt = 0;      // 清空奇遇状态，进入后重新排期
   setScreen('ingame');
   boot();
 }
@@ -5599,7 +5467,7 @@ function doRebirth(){
       setAvatar($('avatar'), titleOf(S.level)[2]);
       sfx('rebirth');
       log(`🔄 第 ${S.rb} 次重生！获得 ${gain} 魂晶${keepGold ? `，保留 ${keepGold} 金币` : ''}`, 'up');
-      try{ if(typeof syncScore === 'function') syncScore(true); }catch(e){}
+      
       toast(`🔄 重生成功！+${gain} 魂晶`);
       renderAll(); save();
       showTree();                       // 重生后跳转到升级树页面
@@ -7495,7 +7363,7 @@ function towerWin(){
   const n = towerFloor() + 1;
   S.tower.floor = n;
   if(n > towerMax()) S.tower.max = n;
-  try{ if(typeof syncScore === 'function') syncScore(true); }catch(e){}
+  
   const rw = towerReward(n);
   addGold(rw.gold * upTowerMult()); addExp(rw.exp * upTowerMult());
   if(rw.soul) S.soul += rw.soul;
@@ -8590,12 +8458,25 @@ function renderChap(){
 /* ======================= 随机奇遇 ======================= */
 function maybeEvent(){
   if(!inGame || B || S.evtPending) return;
-  if(Date.now() < (S.evtAt || 0)) return;
-  S.evtAt = Date.now() + (180 + Math.random() * 180) * 1000;   // 3~6 分钟一次
+  const now = Date.now();
+  // 首次进入（evtAt 未设置）时先排一个完整间隔，不要立刻弹窗挡住界面
+  if(!S.evtAt){ S.evtAt = now + evtInterval(); save(); return; }
+  if(now < S.evtAt) return;
+  S.evtAt = now + evtInterval();   // 3~6 分钟一次
   const ev = EVENTS[Math.floor(Math.random() * EVENTS.length)];
   S.evtPending = ev.id;
   renderEvent(ev);
   save();
+}
+/* 奇遇间隔倍率：数值越大间隔越长。升级树无相关节点时为 1 */
+function evtGapMult(){
+  const m = (typeof upEvtGap === 'function') ? upEvtGap() : 1;
+  return (typeof m === 'number' && m > 0) ? m : 1;
+}
+/* 两次奇遇之间的间隔（毫秒）：3~6 分钟 */
+function evtInterval(){
+  const base = 180 + Math.random() * 180;
+  return Math.round(base * 1000 * evtGapMult());
 }
 /* 风险等级文案 */
 const RISK_TXT = ['', '', '⚠️ 有风险', '💀 危险'];
@@ -8804,8 +8685,18 @@ function handleImportFile(file){
 /* ======================= 更新日志 ======================= */
 /* 从 v1.0 到现在版本的全部更新记录（新版本在上） */
 const CHANGELOG = [
-  {ver:'v1.7.3', tag:'删除功能', items:[
-    '删除了排行榜功能'
+  {ver:'v1.8.1', tag:'修复进游戏卡屏', items:[
+    '修复进入游戏后立刻弹出奇遇弹窗、整屏遮罩挡住界面的问题（误以为是加载页）',
+    '新存档首次进入会先排一个 3~6 分钟的奇遇间隔，不再秒弹',
+    '离线期间累积的奇遇不再在进游戏时补弹，改为重新排期',
+    '上次退出时未处理的奇遇不会延续到下次进入',
+    '奇遇到期后仍能正常触发，功能不受影响'
+  ]},
+  {ver:'v1.8.0', tag:'纯前端化', items:[
+    '移除所有需要后端/服务器的功能：玩家排行榜（含数据同步、定时上传）',
+    '删除全部网络请求代码（fetch 调用、服务端 API 地址、session 凭据）',
+    '现在游戏完全离线运行，不发送任何网络请求，无任何外部依赖',
+    '主界面按钮从 27 个减为 26 个（排行榜入口已移除）'
   ]},
   {ver:'v1.7.2', tag:'布局修复', items:[
     '修复主界面按钮布局错乱：两处按钮行标签未闭合，导致按钮挤成 4 个、5 个一行',
@@ -8822,8 +8713,8 @@ const CHANGELOG = [
     '入口在「日常」弹窗，新增签到、转盘两个页签；按钮提示「🎁可签到」',
     '修复「陈列室」按钮标签损坏导致主界面按钮错乱的问题'
   ]},
-  {ver:'v1.7.0', tag:'排行榜', items:[
-    '新增玩家排行榜，显示其他玩家的真实数据（服务器记录，非本地假数据）',
+  {ver:'v1.7.0', tag:'排行榜（已于 v1.8.0 移除）', items:[
+    '（已移除）新增玩家排行榜，显示其他玩家的真实数据（服务器记录，非本地假数据）',
     '五个排名维度：等级 / 战力 / 金币 / 轮回次数 / 爬塔层数',
     '升级、重生、刷新爬塔记录时自动同步，另有 60 秒定时同步',
     '自己高亮显示，前三名金银铜标记，通关玩家带「通关」标签',
@@ -8945,7 +8836,7 @@ function renderLogBtn(){
 
 /* ======================= 玩法介绍 ======================= */
 /* ======================= 公告 ======================= */
-const GAME_VER = 'v1.7.2';               // 游戏版本号（主菜单与公告页脚显示）
+const GAME_VER = 'v1.8.1';               // 游戏版本号（主菜单与公告页脚显示）
 const NOTICE_VER = 1;                    // 公告版本号：改动公告内容时 +1，会自动重新弹出
 const NOTICE_DATE = '2026-10-16';
 const NOTICES = [
@@ -9475,7 +9366,6 @@ function skipPoem(){
 function finishPoem(){
   try{
     S.beat = true;
-    if(typeof syncScore === 'function') syncScore(true);
   }catch(e){}                      // 滚完（或跳过）统一进入结束页
   playingPoem = false;
   showAfter();
@@ -9571,6 +9461,9 @@ $('slotName').addEventListener('keydown', e => { if(e.key === 'Enter') $('slotOk
 
 function boot(){
   load();
+  // 进入游戏时不补弹离线期间累积的奇遇：若已过期或从未排期，重新排一个完整间隔
+  if(!S.evtAt || S.evtAt < Date.now()) S.evtAt = Date.now() + evtInterval();
+  S.evtPending = null;               // 上次未处理的奇遇不延续
   applyTheme();                      // 应用已保存的主题
   try{ initEmoji(); }catch(e){}      // emoji → SVG 图标
   setAvatar($('avatar'), titleOf(S.level)[2]);
