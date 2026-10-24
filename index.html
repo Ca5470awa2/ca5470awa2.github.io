@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>小游戏合集</title>
+<style>
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0;min-height:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+    color:#e8eaf6;
+    background:radial-gradient(900px 520px at 50% 0%,#2f3475 0%,#14152e 55%,#08080f 100%) fixed;
+    padding:0 0 40px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ===== 顶部 ===== */
+  .top{text-align:center;padding:34px 18px 22px}
+  .top .em{display:flex;justify-content:center;margin-bottom:10px}
+  .top .lg{
+    font-size:34px;font-weight:900;letter-spacing:7px;line-height:1.2;
+    background:linear-gradient(90deg,#ffe28a,#ffb35c,#ff7bd5,#7b83ff,#6ee7ff);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .top .sub{font-size:11px;letter-spacing:3px;opacity:.55;margin-top:6px}
+  .top .cnt{
+    display:inline-block;margin-top:12px;font-size:10.5px;font-weight:800;
+    padding:4px 12px;border-radius:999px;
+    background:rgba(255,215,110,.14);border:1px solid rgba(255,215,110,.3);color:#ffd76e;
+  }
+
+  /* ===== 列表 ===== */
+  .wrap{max-width:560px;margin:0 auto;padding:0 16px}
+  .secT{
+    font-size:11px;font-weight:800;opacity:.5;letter-spacing:2px;
+    margin:6px 0 12px;padding-left:2px;
+  }
+
+  .card{
+    display:flex;gap:13px;align-items:flex-start;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:16px;padding:14px;margin-bottom:12px;
+    cursor:pointer;position:relative;overflow:hidden;
+    transition:transform .16s,border-color .16s,background .16s;
+  }
+  .card:hover{
+    transform:translateY(-2px);
+    border-color:rgba(255,215,110,.38);
+    background:rgba(255,255,255,.075);
+  }
+  .card:active{transform:translateY(0) scale(.99)}
+  .card::before{
+    content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+    background:linear-gradient(180deg,#ffd76e,#ff7bd5);
+  }
+
+  .cIco{
+    width:58px;height:58px;flex:none;border-radius:15px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,#ffd76e,#ff9d5c);
+    box-shadow:0 5px 16px rgba(255,157,92,.28);
+  }
+  .cMain{flex:1;min-width:0}
+  .cName{font-size:16px;font-weight:900;letter-spacing:.5px}
+  .cEn{font-size:9.5px;opacity:.45;letter-spacing:1.5px;margin-top:2px}
+  .cDesc{
+    font-size:11.5px;line-height:1.6;opacity:.72;margin-top:7px;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  }
+  .cTags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+  .tag{
+    font-size:9px;font-weight:800;padding:2.5px 8px;border-radius:999px;
+    background:rgba(110,231,255,.13);border:1px solid rgba(110,231,255,.24);color:#6ee7ff;
+  }
+  .tag.hot{background:rgba(255,123,213,.14);border-color:rgba(255,123,213,.3);color:#ff9bd5}
+  .tag.gold{background:rgba(255,215,110,.14);border-color:rgba(255,215,110,.3);color:#ffd76e}
+  .cFoot{
+    display:flex;align-items:center;justify-content:space-between;gap:8px;
+    margin-top:9px;padding-top:8px;border-top:1px solid rgba(255,255,255,.07);
+  }
+  .cVer{font-size:9.5px;opacity:.5;font-weight:700}
+  .cGo{
+    font-size:11px;font-weight:900;padding:6px 15px;border-radius:999px;border:none;
+    background:linear-gradient(135deg,#ffd98a,#ffb35c,#ff9d5c);color:#3a2405;
+    box-shadow:0 3px 0 #c9832f;letter-spacing:.5px;
+  }
+  .cGo:active{transform:translateY(3px);box-shadow:0 0 0 #c9832f}
+
+  /* ===== 版本选择 ===== */
+  .cVerRow{
+    display:flex;align-items:center;gap:8px;margin-top:9px;padding-top:8px;
+    border-top:1px solid rgba(255,255,255,.07);
+  }
+  .cVerLb{font-size:9.5px;font-weight:800;opacity:.55;flex:none;letter-spacing:.5px}
+  .cSel{
+    flex:1;min-width:0;font-family:inherit;font-size:11px;font-weight:800;
+    padding:6px 9px;border-radius:9px;cursor:pointer;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+    color:#eef0ff;appearance:none;-webkit-appearance:none;
+    background-image:linear-gradient(45deg,transparent 50%,#ffd76e 50%),linear-gradient(135deg,#ffd76e 50%,transparent 50%);
+    background-position:calc(100% - 14px) 50%,calc(100% - 9px) 50%;
+    background-size:5px 5px,5px 5px;background-repeat:no-repeat;
+  }
+  .cSel:focus{outline:none;border-color:rgba(255,215,110,.5)}
+  .cSel option{background:#191c2b;color:#eef0ff}
+  .cVerTag{
+    font-size:9.5px;font-weight:800;padding:2px 8px;border-radius:999px;flex:none;
+    background:rgba(157,255,207,.13);border:1px solid rgba(157,255,207,.28);color:#9dffcf;
+  }
+  .cVerTag.new{background:rgba(255,215,110,.14);border-color:rgba(255,215,110,.32);color:#ffd76e}
+
+  /* ===== 占位卡 ===== */
+  .card.soon{
+    cursor:default;opacity:.42;
+    border-style:dashed;border-color:rgba(255,255,255,.16);
+  }
+  .card.soon:hover{transform:none;background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.16)}
+  .card.soon::before{background:rgba(255,255,255,.2)}
+  .card.soon .cIco{
+    background:rgba(255,255,255,.08);box-shadow:none;border:1px dashed rgba(255,255,255,.24);
+  }
+
+  /* ===== 底部 ===== */
+  .foot{
+    max-width:560px;margin:22px auto 0;padding:14px 16px 0;
+    border-top:1px solid rgba(255,255,255,.08);
+    font-size:10.5px;line-height:1.9;opacity:.5;text-align:center;
+  }
+  .foot b{color:#ffd76e;opacity:.9}
+
+  @media (max-width:400px){
+    .top .lg{font-size:28px;letter-spacing:5px}
+    .cIco{width:52px;height:52px}
+    .cName{font-size:15px}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="em">
+    <svg viewBox="0 0 24 24" width="54" height="54">
+      <path d="M4 20l6-6" fill="none" stroke="#ff8a8a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 4l6 6" fill="none" stroke="#c58aff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M3 17l4 4 2-2-4-4z" fill="none" stroke="#ff8a8a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M15 3l4 4 2-2-4-4z" fill="none" stroke="#ff8a8a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6.5 13.5l4 4" fill="none" stroke="#ff8a8a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="lg">小 游 戏 合 集</div>
+  <div class="sub">MINI GAMES · 一个入口，玩转全部</div>
+  <div class="cnt" id="gCnt">共 0 款游戏</div>
+</div>
+
+<div class="wrap">
+  <div class="secT">全部游戏</div>
+  <div id="list"></div>
+
+  <div class="secT" style="margin-top:18px">敬请期待</div>
+  <div class="card soon">
+    <div class="cIco">
+      <svg viewBox="0 0 24 24" width="30" height="30">
+        <path d="M12 5v14M5 12h14" fill="none" stroke="#9aa0c4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="cMain">
+      <div class="cName">新游戏</div>
+      <div class="cEn">COMING SOON</div>
+      <div class="cDesc">更多小游戏正在制作中，敬请期待</div>
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+  所有游戏<b>纯前端运行</b>，无需联网、无需安装<br>
+  进度保存在本机浏览器，换设备可用<b>存档导出</b>带走<br>
+  <span id="fVer"></span>
+</div>
+
+<script>
+/* ============================================================
+   游戏清单 —— 以后新增小游戏，只需在下面数组里加一项：
+
+   {
+     name:'游戏名', en:'ENGLISH NAME',
+     file:'idle_hero/index.html', // 游戏放在 idle_hero 子目录
+     desc:'一句话简介',
+     tags:['标签1','标签2'],       // 第 1 个标签默认高亮为金色
+     ver:'v1.00.000',  // ← 游戏更新后记得同步这里的版本号（格式 x.xx.xxx）
+     ico:`<svg>...</svg>`,        // 图标 SVG（白色描边，会自动着色）
+     grad:'linear-gradient(135deg,#xxx,#yyy)'   // 图标底色
+   }
+   ============================================================ */
+const GAMES = [
+  {
+    name:'放置英雄',
+    en:'IDLE HERO',
+    file:'idle_hero/index.html',
+    desc:'挂机放置冒险：30 个场景、21 只宠物、33 节点升级树、28 条强化、38 个版本迭代与轮回重生。',
+    tags:['放置挂机','角色扮演','收集养成'],
+    ver:'v1.24.000',
+    /* 历史版本：从 v1.0.0 到当前版本的完整可玩文件，放在 versions/ 目录 */
+    versions:[
+      {ver:'v1.24.000', tag:'精简设置与完善英文', file:'idle_hero/versions/idle_hero_v1.24.000.html'},
+      {ver:'v1.23.000', tag:'设置迁移与存档选择', file:'idle_hero/versions/idle_hero_v1.23.000.html'},
+      {ver:'v1.22.000', tag:'个性化与多语言', file:'idle_hero/versions/idle_hero_v1.22.000.html'},
+      {ver:'v1.21.000', tag:'移除等级门槛', file:'idle_hero/versions/idle_hero_v1.21.000.html'},
+      {ver:'v1.20.000', tag:'品质预设与每日挑战', file:'idle_hero/versions/idle_hero_v1.20.000.html'},
+      {ver:'v1.18.000', tag:'称号与快捷操作', file:'idle_hero/versions/idle_hero_v1.18.000.html'},
+      {ver:'v1.17.001', tag:'修复确认框显示 HTML 标签', file:'idle_hero/versions/idle_hero_v1.17.001.html'},
+      {ver:'v1.17.000', tag:'移除升级上限与修复公告', file:'idle_hero/versions/idle_hero_v1.17.000.html'},
+      {ver:'v1.16.000', tag:'单次升级上限 15000 级', file:'idle_hero/versions/idle_hero_v1.16.000.html'},
+      {ver:'v1.15.000', tag:'清空数据与存档代码', file:'idle_hero/versions/idle_hero_v1.15.000.html'},
+      {ver:'v1.14.000', tag:'一键升到满解除上限', file:'idle_hero/versions/idle_hero_v1.14.000.html'},
+      {ver:'v1.13.001', tag:'修复导入存档失效', file:'idle_hero/versions/idle_hero_v1.13.001.html'},
+      {ver:'v1.13.000', tag:'通关条件改为经验', file:'idle_hero/versions/idle_hero_v1.13.000.html'},
+      {ver:'v1.12.000', tag:'强化系统', file:'idle_hero/versions/idle_hero_v1.12.000.html'},
+      {ver:'v1.11.000', tag:'场景升级与新篇章', file:'idle_hero/versions/idle_hero_v1.11.000.html'},
+      {ver:'v1.10.000', tag:'重型任务加载页', file:'idle_hero/versions/idle_hero_v1.10.000.html'},
+      {ver:'v1.09.003', tag:'修复详情浮窗定位', file:'idle_hero/versions/idle_hero_v1.09.003.html'},
+      {ver:'v1.09.002', tag:'根治图标变表情', file:'idle_hero/versions/idle_hero_v1.09.002.html'},
+      {ver:'v1.09.001', tag:'背包多击操作', file:'idle_hero/versions/idle_hero_v1.09.001.html'},
+      {ver:'v1.09.000', tag:'强化与五行', file:'idle_hero/versions/idle_hero_v1.09.000.html'},
+      {ver:'v1.08.002', tag:'补齐样式', file:'idle_hero/versions/idle_hero_v1.08.002.html'},
+      {ver:'v1.08.001', tag:'修复进游戏卡屏', file:'idle_hero/versions/idle_hero_v1.08.001.html'},
+      {ver:'v1.08.000', tag:'纯前端化', file:'idle_hero/versions/idle_hero_v1.08.000.html'},
+      {ver:'v1.07.002', tag:'布局修复', file:'idle_hero/versions/idle_hero_v1.07.002.html'},
+      {ver:'v1.07.001', tag:'签到与转盘', file:'idle_hero/versions/idle_hero_v1.07.001.html'},
+      {ver:'v1.07.000', tag:'排行榜（已于 v1.08.000 移除）', file:'idle_hero/versions/idle_hero_v1.07.000.html'},
+      {ver:'v1.06.004', tag:'精简设置', file:'idle_hero/versions/idle_hero_v1.06.004.html'},
+      {ver:'v1.06.003', tag:'紧急修复', file:'idle_hero/versions/idle_hero_v1.06.003.html'},
+      {ver:'v1.06.002', tag:'更新日志', file:'idle_hero/versions/idle_hero_v1.06.002.html'},
+      {ver:'v1.06.001', tag:'存档文件化', file:'idle_hero/versions/idle_hero_v1.06.001.html'},
+      {ver:'v1.06.000', tag:'万象归一', file:'idle_hero/versions/idle_hero_v1.06.000.html'},
+      {ver:'v1.05.000', tag:'爬塔与洗练', file:'idle_hero/versions/idle_hero_v1.05.000.html'},
+      {ver:'v1.04.000', tag:'坐骑与觉醒', file:'idle_hero/versions/idle_hero_v1.04.000.html'},
+      {ver:'v1.03.008', tag:'版本定号', file:'idle_hero/versions/idle_hero_v1.03.008.html'},
+      {ver:'v1.03.000', tag:'轮回与终章', file:'idle_hero/versions/idle_hero_v1.03.000.html'},
+      {ver:'v1.02.000', tag:'成就与彩蛋', file:'idle_hero/versions/idle_hero_v1.02.000.html'},
+      {ver:'v1.01.000', tag:'背包与战斗', file:'idle_hero/versions/idle_hero_v1.01.000.html'},
+      {ver:'v1.00.000', tag:'开天辟地', file:'idle_hero/versions/idle_hero_v1.00.000.html'}
+    ],
+    grad:'linear-gradient(135deg,#ffd76e,#ff9d5c)',
+    ico:`<svg viewBox="0 0 24 24" width="30" height="30">
+      <path d="M4 20l6-6" fill="none" stroke="#3a2405" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 4l6 6" fill="none" stroke="#3a2405" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M3 17l4 4 2-2-4-4z" fill="none" stroke="#3a2405" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M15 3l4 4 2-2-4-4z" fill="none" stroke="#3a2405" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`
+  }
+  /* ↓↓↓ 以后新增游戏就加在这里 ↓↓↓ */
+];
+
+function render(){
+  const list = document.getElementById('list');
+  document.getElementById('gCnt').textContent = `共 ${GAMES.length} 款游戏`;
+  list.innerHTML = GAMES.map((g, i) => `
+    <div class="card" data-file="${g.file}" data-i="${i}">
+      <div class="cIco" style="background:${g.grad}">${g.ico}</div>
+      <div class="cMain">
+        <div class="cName">${g.name}</div>
+        <div class="cEn">${g.en}</div>
+        <div class="cDesc">${g.desc}</div>
+        <div class="cTags">
+          ${g.tags.map((t, k) => `<span class="tag${k === 0 ? ' gold' : (k === 1 ? ' hot' : '')}">${t}</span>`).join('')}
+        </div>
+        ${(g.versions && g.versions.length) ? `
+        <div class="cVerRow">
+          <span class="cVerLb">版本</span>
+          <select class="cSel" data-i="${i}">
+            ${g.versions.map((v, k) => `<option value="${k}"${k === 0 ? ' selected' : ''}>${v.ver} · ${v.tag}</option>`).join('')}
+          </select>
+          <span class="cVerTag${g.versions[0].ver === g.ver ? ' new' : ''}">${g.versions.length} 版可选</span>
+        </div>` : ''}
+        <div class="cFoot">
+          <span class="cVer">${g.ver}</span>
+          <button class="cGo">开始游戏</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  /* 每张卡记录当前选中的版本文件，默认取列表第一项（最新版本） */
+  const picked = {};
+  GAMES.forEach((g, i) => {
+    picked[i] = (g.versions && g.versions.length) ? g.versions[0].file : g.file;
+  });
+
+  // 切换版本下拉（阻止冒泡，避免触发整卡跳转）
+  list.querySelectorAll('.cSel').forEach(sel => {
+    sel.onclick = e => e.stopPropagation();
+    sel.onchange = e => {
+      e.stopPropagation();
+      const i = Number(sel.getAttribute('data-i'));
+      const g = GAMES[i];
+      const v = g.versions[Number(sel.value)];
+      picked[i] = v ? v.file : g.file;
+      // 同步卡片上显示的版本号
+      const verEl = sel.closest('.card').querySelector('.cVer');
+      if(verEl && v) verEl.textContent = v.ver;
+    };
+  });
+
+  // 点击整张卡片打开游戏（打开当前选中的版本）
+  list.querySelectorAll('.card').forEach(c => {
+    c.onclick = () => {
+      const i = Number(c.querySelector('.cSel') ? c.querySelector('.cSel').getAttribute('data-i') : c.getAttribute('data-i'));
+      const f = picked[i] || c.getAttribute('data-file');
+      if(f) location.href = f;
+    };
+  });
+}
+render();
+document.getElementById('fVer').textContent = '合集页面 v1.0';
+
+/* 版本自动同步（可选增强）
+   在 http(s) 服务器下打开时，会尝试读取各游戏文件的真实版本号并覆盖显示；
+   本地双击打开（file://）会被浏览器安全策略阻止，此时沿用上面手填的版本号。
+   所以：直接双击打开也没问题，只是版本号需要手动同步。 */
+function syncVersions(){
+  GAMES.forEach(g => {
+    if(!g.file) return;
+    fetch(g.file, {cache:'no-store'})
+      .then(r => r.ok ? r.text() : null)
+      .then(txt => {
+        if(!txt) return;
+        const m = txt.match(/GAME_VER\s*=\s*['\"]([^'\"]+)['\"]/);
+        if(!m || m[1] === g.ver) return;
+        g.ver = m[1];                       // 更新为真实版本
+        const i = GAMES.indexOf(g);
+        const card = document.querySelectorAll('#list .cVer')[i];
+        if(card) card.textContent = m[1];
+      })
+      .catch(() => {});                     // file:// 下失败，静默忽略
+  });
+}
+try{ syncVersions(); }catch(e){}
+</script>
+</body>
+</html>
